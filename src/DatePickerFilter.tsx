@@ -1,13 +1,10 @@
+import { IDateParams } from "ag-grid-community";
 import * as React from "react";
 import ReactDatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-type UpdateDateProps = {
-  onDateChanged: () => void;
-};
-
-export const DatePickerFilter = React.forwardRef<unknown, UpdateDateProps>((props, ref) => {
+export const DatePickerFilter = React.forwardRef<unknown, IDateParams>((props, ref) => {
   const [date, setDate] = React.useState<Date | null>(null);
 
   const onDateChanged = (selectedDate: Date) => {
